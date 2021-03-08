@@ -1,0 +1,28 @@
+package com.company;
+
+public class Person {
+}
+    private final String Imię;
+    private final String Nazwisko;
+    private final int Urodziny;
+    public Person(String Imię, String Nazwisko, int Urodziny) throws Exception {
+        this.Imię = Imię;
+        this.Nazwisko = Nazwisko;
+        this.Urodziny = Urodziny;
+        informację(Imię, Nazwisko, Urodziny);
+    }
+    private void informację(String Imię, String Nazwisko, int Urodziny) throws Exception {
+
+        if (Imię.isBlank())
+            throw new Exception("Błędne imię");
+        if (Nazwisko.isBlank())
+            throw new Exception("Błędne nazwisko");
+        if (Urodziny < 1900 || Urodziny > 2020)
+            throw new Exception("Błędny rok urodzenia");
+    }
+    public String toString() {
+        return "Osoba\n" +
+                "Imię: " + Imię + '\n' +
+                "Nazwisko: " + Nazwisko + '\n' +
+                "Rok urodzenia: " + Urodziny;
+    }
